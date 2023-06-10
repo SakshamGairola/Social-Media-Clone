@@ -2,6 +2,7 @@ const express = require('express')
 const http = require('http')
 const path = require('path')
 const {Server} = require('socket.io')
+const userRouter = require('./router/userRouter')
 const port = 9000
 
 
@@ -14,6 +15,8 @@ app.use(express.static(path.resolve('./public')))
 app.get('/', (req, res) => {
     return res.sendFile('/public/index.html')
 })
+
+app.use('/user', userRouter)
 
 io.on('connection', (socket) => {
     console.log('a user connected' + socket.id)
