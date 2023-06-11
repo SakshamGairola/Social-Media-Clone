@@ -18,7 +18,9 @@ and run `node client1.js` in one terminal
 and run `node client2.js` in another terminal
 
 for the RestAPI after launching the server you can use postman to make 
-`GET/ POST/ PATCH/ and DELETE` requests
+`GET/ POST/ PATCH/ and DELETE` requests at `localhost:PORT/user/`
 
 
-The application will run on `localhost:9000` 
+The application will run on `localhost:PORT` in which PORT can be changed from .env file
+
+Make a database in mongo named as profiles or change it in url string (replace 'profiles') with one of your own in .env file

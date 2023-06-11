@@ -3,7 +3,10 @@ const http = require('http')
 const path = require('path')
 const {Server} = require('socket.io')
 const userRouter = require('./router/userRouter')
-const port = 9000
+const database = require('./db/mongooseDB')
+require('dotenv').config()
+
+const PORT = process.env.PORT || 3000
 
 
 const app = express()
@@ -33,5 +36,5 @@ io.on('connection', (socket) => {
 
 
 server.listen(9000, () => {
-    console.log('Server started')
+    console.log(`Server started on port ${PORT}`)
 })
